@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reszponzív</title>
+    <style>
+        html { scroll-behavior: smooth; }
+        body { background-color: burlywood; margin: 0px; }
+        #nav {
+            position: relative;
+            background-color: #333;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        #nav a {
+            display: inline-block;
+            background-color: #333;
+            color: white;
+            text-decoration: none;
+            padding: 5px 10px;
+        }
+        #nav a:hover {
+            background-color: lightgrey;
+            color: black;
+        }
+        #nav a.selected {
+            background-color: lightgreen;
+            color: black;
+        }
+        #nav #ham { display: none; }
+        #nav #menu { display: block; }
+        #main {
+            width: 900px; margin: 0px auto;
+            background-color: white;
+            border: 1px solid black;
+            padding: 10px;
+        }
+        #row {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        #d1, #d2, #d3 {
+            width: 30%;
+            border: 1px solid lightgrey;
+            text-align: justify;
+            padding: 5px;
+        }
+        .kepek {
+            display: flex;
+            gap: 5px;
+        }
+        img { width: 100%; }
+
+        /* --- */
+        @media (max-width: 1200px) {
+            body { background-color: lightpink; }
+            #main { width: 90%; }
+        }
+
+        /* --- */
+        @media (max-width: 900px) {
+            body {background-color: lightseagreen; }
+            #main { width: 90%; }
+            #nav #ham { display: inline-block; }
+            #nav #menu { display: none; }
+            #nav #menu.show { display: block; position: absolute; }
+            #nav #menu.show a { display: block; }
+            #row { display: block; }
+            #d1, #d2, #d3 { width: 100%; }
+
+        }
+    </style>
+    <script>
+        function menu() {
+            let m = document.getElementById("menu");
+            if (m.className == "") m.className = "show"; else m.className = "";
+        }
+    </script>
+</head>
+<body>
+    
+    <div id="nav">
+        <a href="#" id="ham" onclick="menu();">&#9776;</a>
+        <div id="menu" class="">
+            <a href="#" class="selected">Kezdőlap</a>
+            <a href="#">Szabályok</a>
+            <a href="#">Játék1</a>
+            <a href="#">Játék2</a>
+            <a href="#">Játék3</a>
+            <a href="#">Játék4</a>
+            <a href="#nevjegy">Névjegy</a>
+        </div>
+    </div>
+
+    <div id="main">
+        <div id="row">
+            <div id="d1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde assumenda ad ducimus velit quo accusamus, explicabo pariatur, officiis tenetur, hic eos aspernatur enim? Praesentium similique amet id ipsam dolor quibusdam?</div>
+            <div id="d2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam in voluptatibus eius natus? Velit, qui mollitia dolore quibusdam provident pariatur quia cumque eum consequuntur voluptates nemo obcaecati excepturi omnis ipsum!</div>
+            <div id="d3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo nostrum laboriosam ea ipsa accusamus sequi distinctio tempora asperiores facilis quaerat nisi voluptatum, id animi qui culpa labore sit amet adipisci!</div>
+        </div>
+        <img src="sun.jpg">
+        <div class="kepek">
+            <div><img src="sun1.jpg"></div>
+            <div><img src="sun1.jpg"></div>
+            <div><img src="sun1.jpg"></div>
+        </div>
+        <div class="kepek">
+            <div><img src="sun1.jpg"></div>
+            <div><img src="sun1.jpg"></div>
+            <div><img src="sun1.jpg"></div>
+        </div>
+        <div>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam adipisci exercitationem ab ea repellendus cum harum, accusantium natus distinctio dolorum alias dignissimos unde perspiciatis aspernatur a incidunt? Nisi, amet veritatis?</p>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam adipisci exercitationem ab ea repellendus cum harum, accusantium natus distinctio dolorum alias dignissimos unde perspiciatis aspernatur a incidunt? Nisi, amet veritatis?</p>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam adipisci exercitationem ab ea repellendus cum harum, accusantium natus distinctio dolorum alias dignissimos unde perspiciatis aspernatur a incidunt? Nisi, amet veritatis?</p>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam adipisci exercitationem ab ea repellendus cum harum, accusantium natus distinctio dolorum alias dignissimos unde perspiciatis aspernatur a incidunt? Nisi, amet veritatis?</p>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam adipisci exercitationem ab ea repellendus cum harum, accusantium natus distinctio dolorum alias dignissimos unde perspiciatis aspernatur a incidunt? Nisi, amet veritatis?</p>
+        </div>
+        <a name="nevjegy"></a>
+        <div>
+            Készítette: 12/A, 2024.05.17.
+        </div>
+    </div>
+
+</body>
+</html>
